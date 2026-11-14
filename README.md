@@ -4,15 +4,6 @@ A 3D bug-popping arena game that runs in the browser. Built with plain JavaScrip
 [three.js](https://threejs.org/) on a Jekyll site for GitHub Pages.
 
 
-## Run it locally
-
-```
-bundle install
-bundle exec jekyll serve
-```
-
-Then open http://localhost:4000.
-
 ## Controls
 
 | Action | Desktop | Phone or tablet |
