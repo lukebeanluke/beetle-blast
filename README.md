@@ -3,6 +3,9 @@
 A 3D bug-popping arena game that runs in the browser. Built with plain JavaScript and
 [three.js](https://threejs.org/) on a Jekyll site for GitHub Pages.
 
+# play it now!
+
+https://lukebeanluke.github.io/beetle-blast/
 
 ## Controls
 
