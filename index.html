@@ -1,0 +1,84 @@
+---
+title: Web Hunter
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Web Hunter</title>
+  <meta name="description" content="A 3D bug-popping arena game that runs right in your browser.">
+  <meta name="theme-color" content="#fbe2bd">
+  <meta property="og:title" content="Web Hunter">
+  <meta property="og:description" content="Pop the bugs before they reach you. A 3D arena game that runs in your browser.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🪲%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-mode="menu">
+  <div id="stage"></div>
+  <div id="hurt"></div>
+  <div id="crosshair"></div>
+
+  <div class="hud" id="hud">
+    <div class="panel hud-score">
+      <div class="big" id="hudScore">0</div>
+      <div class="small">Best <span id="hudBest">0</span></div>
+    </div>
+    <div class="panel hud-wave">
+      <div class="mid">Wave <span id="hudWave">1</span></div>
+      <div class="small"><span id="hudLeft">0</span> bugs left</div>
+    </div>
+    <div class="panel hud-boss" id="bossBar" style="display:none">
+      <span class="label" id="bossName">Boss</span>
+      <div class="bar"><i id="bossFill"></i></div>
+    </div>
+    <canvas id="radar" width="300" height="300" aria-label="Radar showing nearby bugs"></canvas>
+    <button id="pauseBtn" class="round-btn touch-only" type="button" aria-label="Pause">II</button>
+    <div class="panel hud-health">
+      <span class="label">Health <b id="hpText">100</b></span>
+      <div class="bar"><i id="hpFill"></i></div>
+    </div>
+    <div class="panel hud-combo" id="combo">
+      <span id="comboText"></span>
+      <div class="bar thin"><i id="comboFill"></i></div>
+    </div>
+    <div class="hud-guns" id="gunHud"></div>
+    <div id="banner" aria-live="polite"></div>
+  </div>
+
+  <div class="touch-ui">
+    <div id="lookzone"></div>
+    <div id="joy"><div id="joyKnob"></div></div>
+    <button id="jumpBtn" type="button">Jump</button>
+    <button id="slideBtn" type="button">Slide</button>
+    <button id="fireBtn" type="button">Fire</button>
+  </div>
+
+  <div id="overlay" class="show" role="dialog" aria-labelledby="ovTitle">
+    <div class="card">
+      <h1 id="ovTitle">Web Hunter</h1>
+      <p id="ovText">Bugs are crawling up your floating island. Pop them before they reach you.</p>
+      <label class="name" id="nameRow">Your name <input id="nameIn" maxlength="12" autocomplete="off" spellcheck="false" placeholder="Hunter"></label>
+      <button id="ovBtn" class="btn" type="button">Start hunting</button>
+      <div class="board" id="boardWrap" hidden>
+        <h2>Top hunters</h2>
+        <ol id="board"></ol>
+        <p id="boardNote"></p>
+      </div>
+      <div id="ovKeys" class="keys"></div>
+      <button id="muteBtn" class="linkbtn" type="button">Sound on</button>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="noscript">Web Hunter needs JavaScript. Turn it on and reload the page.</div>
+  </noscript>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/game.js"></script>
+</body>
+</html>

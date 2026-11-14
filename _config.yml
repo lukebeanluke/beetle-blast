@@ -1,0 +1,14 @@
+title: Web Hunter
+description: A 3D bug-popping arena game that runs in your browser.
+lang: en
+
+# Leave url and baseurl empty: the page uses relative asset paths,
+# so it works at username.github.io/repo-name/ and on a custom domain.
+
+exclude:
+  - README.md
+  - firebase-rules.json
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

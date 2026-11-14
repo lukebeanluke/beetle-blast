@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "scores": {
+      ".read": true,
+      ".indexOn": ["score"],
+      "$id": {
+        ".write": "!data.exists()",
+        ".validate": "newData.hasChildren(['name', 'score', 'wave', 't'])",
+        "name": { ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 12" },
+        "score": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 10000000" },
+        "wave": { ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 100" },
+        "kills": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5000" },
+        "map": { ".validate": "newData.isString() && newData.val().length <= 20" },
+        "t": { ".validate": "newData.val() == now" },
+        "$other": { ".validate": false }
+      }
+    }
+  }
+}
