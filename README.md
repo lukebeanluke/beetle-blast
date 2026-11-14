@@ -1,4 +1,4 @@
-# Web Hunter
+# beetle blast
 
 A 3D bug-popping arena game that runs in the browser. Built with plain JavaScript and
 [three.js](https://threejs.org/) on a Jekyll site for GitHub Pages.
